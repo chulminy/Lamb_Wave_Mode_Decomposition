@@ -13,7 +13,7 @@ Lamb waves using surface-bonded piezoelectric transducers (PZTs) have been widel
 
 
 ## Source Code & Data
-All source code and data are released in this repository. If you use the codes and data for you publication, **please cite my paper(S)**.
+All source code and data are released in this repository. If you use the codes and data for you publication, **please cite my paper(s)**.
 
 ## Setup
 * `Run_FEMValid.m` is to theoretically study the proposed technique using numerical simulation. Please refer to **Section 3** in the [**journal paper**](http://chulminy.github.io/cv/Files/Journal/2011_Wavemotion_Lamb_Wave_Mode.pdf).
