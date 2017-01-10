@@ -101,7 +101,8 @@ y_A0(:,2) = scalingMatrixFEM(:,2);
 
 figure(1)
 h = stem(1:9,y_S0(1:9,:),'fill','--','linewidth',2);
-legend('Theory', 'FEM');legend('location','northEast','orientation', 'horizontal');legend('boxoff');
+legend('Theory', 'FEM');legend('location','northEast','orientation', ...
+    'horizontal');legend('boxoff');
 set(h(1),'MarkerFaceColor','red','Marker','s','markerEdgecolor','none')
 set(h(2),'MarkerFaceColor','blue','Marker','d','markeredgecolor','none')
 set(gca, 'xTickLabel',{'S_1_1';'S_1_2';'S_1_3';'S_2_1'; ...
@@ -115,7 +116,8 @@ print(fullfile(folderOut,'FEM_ScalingS0'),'-djpeg','-r0')
 
 figure(2)
 h = stem(1:9,y_A0(1:9,:),'fill','--','linewidth',2);
-legend('Theory', 'FEM');legend('location','northEast','orientation', 'horizontal');legend('boxoff');
+legend('Theory', 'FEM');legend('location','northEast', ...
+    'orientation', 'horizontal');legend('boxoff');
 set(h(1),'MarkerFaceColor','red','Marker','s','markeredgecolor','none')
 set(h(2),'MarkerFaceColor','blue','Marker','d','markeredgecolor','none')
 set(gca, 'xTickLabel',{'A_1_1';'A_1_2';'A_1_3';'A_2_1'; ...
@@ -149,18 +151,21 @@ x_time = ((1:901) - ini_shift)/fs*1000;     % for ms
 sT = scalingMatrixTheory;   % for simplicity
 
 figure(3)
-plot(x_time,sT(3,1)*Ms*10^6,'r',x_time, S0_F_Col{1,3}*10^6,':b','linewidth', 2);
+plot(x_time,sT(3,1)*Ms*10^6,'r',x_time, S0_F_Col{1,3}*10^6,':b', ...
+    'linewidth', 2);
 % title('S0 modes in V13');
 legend('\bf Proposed','\bf Collocated');
 legend('location','northwest','orientation','horizontal');
 legend('boxoff');
 xlabel('\bf Time (ms)');ylabel('\bf Amplitude');
-set(gcf,'pos',[50 50 450 250]);set(gca,'fontsize',10,'linewidth',2,'fontweight','bold')
+set(gcf,'pos',[50 50 450 250]);set(gca,'fontsize',10,'linewidth',2, ...
+    'fontweight','bold')
 xlim([0 1.3e-01]);
 print(fullfile(folderOut,'FEM_S0_V13'),'-djpeg','-r0')
 
 figure(4)
-plot(x_time,sT(3,2)*Ma*10^6,'r',x_time, A0_F_Col{1,3}*10^6,':b','linewidth', 2);
+plot(x_time,sT(3,2)*Ma*10^6,'r',x_time, A0_F_Col{1,3}*10^6,':b', ...
+    'linewidth', 2);
 % title('A0 modes in V13');
 legend('\bf Proposed','\bf Collocated');
 legend('location','northwest','orientation','horizontal');
@@ -172,7 +177,8 @@ xlim([0 1.3e-01]);
 print(fullfile(folderOut,'FEM_A0_V13'),'-djpeg','-r0')
 
 figure(5)
-plot(x_time,sT(8,1)*Ms*10^6,'r',x_time, S0_F_Col{3,2}*10^6,':b','linewidth', 2);
+plot(x_time,sT(8,1)*Ms*10^6,'r',x_time, S0_F_Col{3,2}*10^6,':b', ...
+    'linewidth', 2);
 % title('S0 modes in V23');
 legend('\bf Proposed','\bf Collocated');
 legend('location','northwest','orientation','horizontal');
@@ -184,7 +190,8 @@ xlim([0 1.3e-01]);
 print(fullfile(folderOut,'FEM_S0_V32'),'-djpeg','-r0')
 
 figure(6)
-plot(x_time,sT(8,2)*Ma*10^6,'r',x_time, A0_F_Col{3,2}*10^6,':b','linewidth', 2);
+plot(x_time,sT(8,2)*Ma*10^6,'r',x_time, A0_F_Col{3,2}*10^6,':b', ...
+    'linewidth', 2);
 % title('A0 modes in V23');
 legend('\bf Proposed','\bf Collocated');
 legend('location','northwest','orientation','horizontal');

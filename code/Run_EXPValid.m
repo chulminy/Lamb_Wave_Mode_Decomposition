@@ -12,7 +12,7 @@
 % Transducers.” Wave Motion 48.4 (2011): 358–370.
 
 %% Test configuration
-%  Please refer the author's original paper
+%  Please refer to the author's original paper
 
 %% Parameters
 clear; clc; close all; format shortg; warning off;
@@ -182,7 +182,8 @@ y_A0(:,2) = scalingMatrix_AB_Col(:,2);
 
 figure(1) ; x = 1:9;
 h = stem(x,y_S0,'fill','--','linewidth',2);
-legend('AB path', 'AD path');legend('location','northEast','orientation', 'horizontal');legend('boxoff');
+legend('AB path', 'AD path');legend('location','northEast', ...
+    'orientation', 'horizontal');legend('boxoff');
 set(h(1),'MarkerFaceColor','red','Marker','s','markeredgecolor','none')
 set(h(2),'MarkerFaceColor','blue','Marker','d','markeredgecolor','none')
 set(gca, 'xTickLabel',{'S_1_1';'S_1_2';'S_1_3';'S_2_1'; ...
@@ -196,7 +197,8 @@ print(fullfile(folderOut,'EXP_ScalingS0'),'-djpeg','-r0')
 
 figure(2) ; x = 1:9;
 h = stem(x,y_A0,'fill','--','linewidth',2);
-legend('AB path', 'AD path');legend('location','northEast','orientation', 'horizontal');legend('boxoff');
+legend('AB path', 'AD path');legend('location','northEast', ...
+    'orientation', 'horizontal');legend('boxoff');
 set(h(1),'MarkerFaceColor','red','Marker','s','markeredgecolor','none')
 set(h(2),'MarkerFaceColor','blue','Marker','d','markeredgecolor','none')
 set(gca, 'xTickLabel',{'A_1_1';'A_1_2';'A_1_3';'A_2_1'; ...
@@ -222,7 +224,8 @@ x_path = 5000:6500;
 x_time = (x_path-5000)./fs*1000 ;  % for ms
 
 figure(3); 
-plot(x_time, S0_B_F_Col{1,3}(x_path),'r' , x_time, S0_B_F_MD{1,3}(x_path),':b','linewidth',2)
+plot(x_time, S0_B_F_Col{1,3}(x_path),'r' , x_time, ...
+    S0_B_F_MD{1,3}(x_path),':b','linewidth',2)
 set(gca,'Ytick',[-0.8 0 0.8]);
 legend('Collocated','Proposed','Orientation','horizontal', ...
     'location','north');legend('boxoff')
@@ -234,7 +237,8 @@ set(gcf,'pos',[50 50 450 250]);
 print(fullfile(folderOut,'EXP_AB_S0_V13'),'-djpeg','-r0');
 
 figure(4);
-plot(x_time, A0_B_F_Col{1,3}(x_path),'r' , x_time, A0_B_F_MD{1,3}(x_path),':b','linewidth',2)
+plot(x_time, A0_B_F_Col{1,3}(x_path),'r' , x_time, ...
+    A0_B_F_MD{1,3}(x_path),':b','linewidth',2)
 set(gca,'Ytick',[-0.8 0 0.8]);
 legend('Collocated','Proposed','Orientation','horizontal', ...
     'location','north');legend('boxoff')
@@ -246,7 +250,8 @@ set(gcf,'pos',[50 50 450 250]);
 print(fullfile(folderOut,'EXP_AB_A0_V13'),'-djpeg','-r0');
 
 figure(5);
-plot(x_time, S0_B_F_Col{3,2}(x_path),'r' , x_time, S0_B_F_MD{3,2}(x_path),':b','linewidth',2)
+plot(x_time, S0_B_F_Col{3,2}(x_path),'r' , x_time, ...
+    S0_B_F_MD{3,2}(x_path),':b','linewidth',2)
 set(gca,'Ytick',[-0.3 0 0.3]);
 legend('Collocated','Proposed','Orientation','horizontal', ...
     'location','north');legend('boxoff')
@@ -257,7 +262,8 @@ set(gcf,'pos',[50 50 450 250]);
 print(fullfile(folderOut,'EXP_AB_S0_V32'),'-djpeg','-r0');
 
 figure(6);
-plot(x_time, A0_B_F_Col{3,2}(x_path),'r' , x_time, A0_B_F_MD{3,2}(x_path),':b','linewidth',2)
+plot(x_time, A0_B_F_Col{3,2}(x_path),'r' , x_time, ...
+    A0_B_F_MD{3,2}(x_path),':b','linewidth',2)
 set(gca,'Ytick',[-0.3 0 0.3]);
 legend('Collocated','Proposed','Orientation','horizontal', ...
     'location','north');legend('boxoff')
